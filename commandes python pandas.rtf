@@ -1,0 +1,76 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2822
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset0 HelveticaNeue;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\deftab560
+\pard\pardeftab560\slleading20\partightenfactor0
+
+\f0\fs26 \cf0 import pandas as pd\
+url = "https://drive.google.com/file/d/1-UtwXHmex5AxenR3aI-VM54ysu4D4ajy"\
+df = pd.read_csv(url)\
+\
+print(df.head())\
+\pard\pardeftab560\slleading20\pardirnatural\partightenfactor0
+\cf0 \
+\pard\pardeftab560\slleading20\partightenfactor0
+\cf0 import pandas as pd\
+df = pd.read_csv("/Users/didier/Downloads/SQLite.1.csv"", sep=",", encoding="utf-8");\
+                 \
+print(df.head())\
+\pard\pardeftab560\slleading20\pardirnatural\partightenfactor0
+\cf0 \
+\
+\
+\pard\pardeftab560\slleading20\partightenfactor0
+\cf0 \
+import pandas as pd\
+df = pd.read_csv("/Users/didier/Downloads/SQLite.1.csv"", sep=",", encoding="utf-8")\
+print(df.head())\
+                 \
+   TOTAL\
+0  44825\
+1    140\
+2    195\
+3    240\
+4    295\
+\
+df2 = pd.read_csv("/Users/didier/Downloads/ventes.csv", sep=",", encoding="utf-8")\
+print(df2.head())    \
+         date    produit  prix  qte region\
+0  2022-01-01  Produit A    10  100   Nord\
+1  2022-01-02  Produit B    15   50   Nord\
+2  2022-01-02  Produit A    10   75    Sud\
+3  2022-01-03  Produit C    20   30   Nord\
+4  2022-01-03  Produit A    10  150    Sud\
+\pard\pardeftab560\slleading20\pardirnatural\partightenfactor0
+\cf0 \
+\pard\pardeftab560\slleading20\partightenfactor0
+\cf0 df2.columns             \
+Index(['date', 'produit', 'prix', 'qte', 'region'], dtype='object')\
+\
+\pard\pardeftab560\slleading20\pardirnatural\partightenfactor0
+\cf0 df2['Total'] = df2['prix']*df2['qte']\
+df2.head()\
+         date    produit  prix  qte region  Total\
+0  2022-01-01  Produit A    10  100   Nord   1000\
+1  2022-01-02  Produit B    15   50   Nord    750\
+2  2022-01-02  Produit A    10   75    Sud    750\
+3  2022-01-03  Produit C    20   30   Nord    600\
+4  2022-01-03  Produit A    10  150    Sud   1500\
+\
+\pard\pardeftab560\slleading20\partightenfactor0
+\cf0 import matplotlib\
+import matplotlib.pyplot as plt\
+\
+df3 = pd.read_csv("/Users/didier/Downloads/VentesProduitsRegion.csv", sep=",", encoding="utf-8")\
+\pard\pardeftab560\slleading20\pardirnatural\partightenfactor0
+\cf0 \
+\pard\pardeftab560\slleading20\partightenfactor0
+\cf0 ax = df3.plot.bar(x="ProduitRegion", y="TOTAL")\
+plt.show()\
+\
+df4 = pd.read_csv("/Users/didier/Downloads/CAparProduits.csv", sep=",", encoding="utf-8")\
+ax = df4.plot.bar(x="Produit", y="CA")\
+plt.show()\
+}
